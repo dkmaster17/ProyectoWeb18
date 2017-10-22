@@ -28,11 +28,47 @@ isset($_POST['correo'])   &&
 isset($_POST['nickname']) &&
 isset($_POST['contraseña']))
 {
+<<<<<<< HEAD
+	
+
+	$base=new PDO('mysql:host=localhost; dbname=usuarios','root','');
+	 	$base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	 	$sql="SELECT * FROM informacion WHERE Nickname= :nickname";
+	 	$resultado=$base->prepare($sql);
+
+	 	$login=htmlentities(addslashes($_POST["nickname"]));
+
+	 	$resultado->bindValue(":nickname", $login);
+
+
+	 	$resultado->execute();
+	 	
+
+	 	$numero_registro=$resultado->rowCount();
+
+	 	if ($numero_registro!=0) {
+	 		header("Location: index.php");
+	 	}else{
+
+
+
+ 			 $sql_store = "INSERT INTO informacion(`Nombre`,`Apellido`,`Cedula`,`Direccion`,`Sexo`,`Telefono`,`Correo`,`Nickname`,`password`)VALUES('$_Nombre','$_Apellido','$_Cedula','$_Direccion','$_Sexo','$_Telefono','$_Correo','$_Nickname','$_Contraseña')";
+  
+ 			$sql=mysqli_query($_DataBase,$sql_store);
+  			header("Location: Login.php");
+  		}
+  }
+
+  
+
+ 
+=======
   $sql_store = "INSERT into informacion(`Nombre`,`Apellido`,`Cedula`,`Direccion`,`Sexo`,`Telefono`,`Correo`,`Nickname`,`password`)VALUES('$_Nombre','$_Apellido','$_Cedula','$_Direccion','$_Sexo','$_Telefono','$_Correo','$_Nickname','$_Contraseña')";
   
 
   $sql=mysqli_query($_DataBase,$sql_store);
 }
  header("Location: Login.php");
+>>>>>>> 18f442fcc4b0eabcf1e63f41cf160c7958f375a1
 ?>
 
