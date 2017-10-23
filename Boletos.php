@@ -36,6 +36,7 @@
 			</td>
 		</table>
 		</form>
+		<a href="Cierre.php"> Cerrar Sesion</a>
 	</div>
 
 
