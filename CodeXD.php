@@ -13,7 +13,7 @@ $_Contraseña=isset($_POST['contraseña'])?$_POST['contraseña']:'';
 $_DataBase= mysqli_connect("localhost" ,"root","","usuarios");
 
 
-session_start();
+
 
 
 
@@ -28,7 +28,6 @@ isset($_POST['correo'])   &&
 isset($_POST['nickname']) &&
 isset($_POST['contraseña']))
 {
-<<<<<<< HEAD
 	
 
 	$base=new PDO('mysql:host=localhost; dbname=usuarios','root','');
@@ -62,13 +61,5 @@ isset($_POST['contraseña']))
   
 
  
-=======
-  $sql_store = "INSERT into informacion(`Nombre`,`Apellido`,`Cedula`,`Direccion`,`Sexo`,`Telefono`,`Correo`,`Nickname`,`password`)VALUES('$_Nombre','$_Apellido','$_Cedula','$_Direccion','$_Sexo','$_Telefono','$_Correo','$_Nickname','$_Contraseña')";
-  
-
-  $sql=mysqli_query($_DataBase,$sql_store);
-}
- header("Location: Login.php");
->>>>>>> 18f442fcc4b0eabcf1e63f41cf160c7958f375a1
 ?>
 
