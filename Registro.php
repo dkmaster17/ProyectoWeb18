@@ -4,7 +4,7 @@ $_NombreEvento=isset($_POST['NombreEvento'])?$_POST['NombreEvento']:'';
 $_Fecha=isset($_POST['Fecha'])?$_POST['Fecha']:'';
 $_Ubicacion=isset($_POST['Ubicacion'])?$_POST['Ubicacion']:'';
 
-$_DataBase= mysqli_connect("localhost" ,"root","","boletos");
+$_DataBase= mysqli_connect("localhost" ,"root","","usuarios");
 
 session_start();
 $_Usuario=$_SESSION['usuario'];
@@ -17,7 +17,7 @@ isset($_POST['Ubicacion']))
 {
 	
 
-	$base=new PDO('mysql:host=localhost; dbname=boletos','root','');
+	$base=new PDO('mysql:host=localhost; dbname=usuarios','root','');
 	 	$base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	 	$sql="SELECT * FROM eventos WHERE codigo= :codigo";
 	 	$resultado=$base->prepare($sql);
